@@ -7,7 +7,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/flaskapp']
 
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/cloud-builders/gcloud:349.0.0'
   args: ['app', 'deploy']
 
 # Clean up (optional)
