@@ -96,7 +96,7 @@ def cat_page():
     url = "http://34.91.156.48/myflix/videos"
     headers = {}
     payload = json.dumps({ })
-    html += "<h1> whats good </h1>"
+    html = "<h1> whats good </h1>"
     response = requests.get(url)
     print(response)
     print(response.status_code)
@@ -106,7 +106,7 @@ def cat_page():
 
     jResp = response.json()
     print(type(jResp))
-    html = "<h2> Your Videos</h2>"
+    html += "<h2> Your Videos</h2>"
     for index in jResp:
         print("----------------")
         for key in index:
