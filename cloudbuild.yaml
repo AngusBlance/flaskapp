@@ -1,0 +1,21 @@
+steps:
+# Execute commands from Buildfile
+- name: 'bash'
+  args: ['./Buildfile']
+
+# Build the Docker image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/flaskapp', '.']
+
+# Push the Docker image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/flaskapp']
+
+# Deploy the application to App Engine (replace with your deployment method if not using App Engine)
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy']
+
+# Clean up (optional)
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'cleanup']
+
