@@ -8,7 +8,7 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/flaskapp']
 
 # Deploy the application to App Engine (replace with your deployment method if not using App Engine)
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/$PROJECT_ID/gcloud'
   args: ['app','deploy']
 
 # Clean up (optional)
