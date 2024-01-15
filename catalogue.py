@@ -96,7 +96,7 @@ def cat_page():
     url = "http://34.91.156.48/myflix/videos"
     headers = {}
     payload = json.dumps({ })
-
+    html += "<h1> whats good </h1>"
     response = requests.get(url)
     print(response)
     print(response.status_code)
